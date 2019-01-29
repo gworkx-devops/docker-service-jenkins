@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    container_name: jenkins
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    environment: 
+      - "JAVA_OPTS=-Xmx768m"
+      - "JAVA_OPTS=-Duser.timezone=America/Toronto"
+      - "JENKINS_OPTS=--prefix=/jenkins"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_data:/var/jenkins_home
+
+volumes:
+  jenkins_data:
