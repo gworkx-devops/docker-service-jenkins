@@ -6,13 +6,19 @@ This Docker Compose File configures and orchestrate the provisioning of a Jenkin
 
 - Docker Engine
 - Docker Compose 3.7 
+- Docker Swarm Mode Enabled (Optional)
 
 
 ### How To Run The Docker-Compose File
 
-- To setup or update a jenkins-ci
+- Method 1 : To setup/deploy or update a jenkins-ci using a standalone docker-ce
 ```bash
-$ docker-compose -f docker-compose.yml -p jenkins up -d
+$ docker-compose pull ; docker-compose -f docker-compose.yml -p jenkins up -d
+```
+
+- Method 2 : To setup/deploy or update a jenkins-ci using a docker-swarm cluster
+```
+$ docker stack deploy -c docker-compose.yml jenkins
 ```
 
 ### Built For/With
