@@ -17,7 +17,7 @@ $ docker-compose pull ; docker-compose -f docker-compose.yml -p jenkins up -d
 ```
 
 - Method 2 : To setup/deploy or update a jenkins-ci using a docker-swarm cluster
-```
+```bash
 $ docker stack deploy -c docker-compose.yml jenkins
 ```
 
