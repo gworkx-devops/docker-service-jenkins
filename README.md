@@ -26,6 +26,13 @@ $ docker stack deploy -c docker-compose.yml jenkins
 $ docker service update --image jenkinsci/blueocean:latest jenkins_jenkins
 ```
 
+_NOTE_
+
+- On a Mac find the InitialAdminPassword here : 
+```bash
+$ docker exec -i `docker container ps | grep jenkins | cut -d" " -f1` cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
 ### Built For/With
 
 * [Jenkins BlueOcean Image](https://hub.docker.com/r/jenkinsci/blueocean) - Jenkins BlueOcean Image
